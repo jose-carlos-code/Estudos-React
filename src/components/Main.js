@@ -21,7 +21,7 @@ export default class Main extends Component{
         const { novaTarefa } = this.state;
         return (
         <div className="main">
-            <h1>Lista de tarefas</h1>
+            <h1>{novaTarefa}</h1>
             <form action="#">
                 <input onChange={this.handleChange} type="text"/>
                 <br/>

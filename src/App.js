@@ -1,5 +1,6 @@
 import React from 'react';
 import Main from './components/Main';
+import Carrinho from './components/Carrinho';
 import './App.css';
 export default function App() {
   // return (
@@ -10,5 +11,11 @@ export default function App() {
   //   //   <p>Eae galera</p>
   //   // </div>
   // );
-  return <Main />
-}
+
+    return (
+    <div>
+      <Main />
+      <Carrinho />  
+    </div>
+  )
+  }
