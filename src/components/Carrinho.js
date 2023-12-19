@@ -2,6 +2,11 @@ import React, {Component} from "react";
 import './Main.css';
 export default class Carrinho extends Component{
 
+    constructor(){
+        super();//chamando o construtor da super classe 
+        this.precoAtual = 0;
+    }
+
     state = {
         qtd: 0,
         precoTotal: 0
@@ -10,12 +15,11 @@ export default class Carrinho extends Component{
     adicionaProduto = (e) => {
         const preco = e.target.value;
         this.setState({
-            precoTotal: preco
+            precoTotal: Number(preco)
         });
     }
 
     render(){
-        let precoAtual;
         let produtos = {
           nitro5: 
             {
@@ -24,8 +28,7 @@ export default class Carrinho extends Component{
             }
         }
         const {precoTotal} = this.state;
-        precoAtual += Number(precoTotal);
-        console.log(precoAtual);
+        this.precoAtual += precoTotal;
         return(
             <div>
                 <h1>Carrinho de Compras</h1>
@@ -38,7 +41,7 @@ export default class Carrinho extends Component{
                 </table>
                 <br/>
                 <br/>
-                <h2>VALOR TOTALDE DE COMPRAS: {precoAtual}</h2>
+                <h2>VALOR TOTALDE DE COMPRAS: {this.precoAtual}</h2>
             </div>
         );
     };
